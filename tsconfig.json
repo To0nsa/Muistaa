@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                     // Required for Prisma 6+
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "allowJs": false,
+    "checkJs": false,
+    "lib": ["ES2022", "DOM"],               // Include DOM types for Fastify
+    "outDir": "dist",                       // Output folder for compiled JS
+    "rootDir": "src",                       // Where your TypeScript code lives
+    "strict": true,                         // Enable strict type checking
+    "esModuleInterop": true,                // Allow `import fs from 'fs'`
+    "skipLibCheck": true,                   // Faster build, skip .d.ts checking
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
+  },
+  "include": ["src/**/*.ts", "src/routes/index.ts", "src/types/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
