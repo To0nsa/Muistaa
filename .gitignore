@@ -1,4 +1,8 @@
 node_modules
+later
 dist/
 .env
-tree.md
+.gitignore
+project_export.txt
+export-project.ts
+
