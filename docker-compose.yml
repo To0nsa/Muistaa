@@ -1,6 +1,8 @@
 services:
   postgres:
     image: postgres:16-alpine3.22
+    ports:
+      - "5432:5432"
     restart: always
     env_file:
       - .env
@@ -44,11 +46,6 @@ services:
       - ./prisma:/app/prisma:rw
       - ./package.json:/app/package.json:ro
       - ./pnpm-lock.yaml:/app/pnpm-lock.yaml:ro
-    healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:3000/health || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
 volumes:
   postgres_data:

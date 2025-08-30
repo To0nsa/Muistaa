@@ -15,12 +15,13 @@ RUN pnpm install
 COPY --chown=node:node prisma ./prisma
 RUN pnpm prisma generate
 
-COPY --chown=node:node entrypoint.sh ./
-RUN chmod +x entrypoint.sh
 COPY --chown=node:node . .
 
 EXPOSE 3000
 
-ENTRYPOINT ["./entrypoint.sh"]
-CMD ["pnpm", "run", "dev"]
+COPY --chown=node:node entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["pnpm", "run", "start"]
 
