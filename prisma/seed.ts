@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client';
 async function main() {
   const prisma = new PrismaClient();
 
-  await prisma.oAuthScope.createMany({
+/*   await prisma.oAuthScope.createMany({
     data: [
       { name: "tasks:read" },
       { name: "tasks:write" },
@@ -13,7 +13,7 @@ async function main() {
     skipDuplicates: true,
   });
 
-  console.log('Seeded OAuth scopes');
+  console.log('Seeded OAuth scopes'); */
   await prisma.$disconnect();
 }
 
